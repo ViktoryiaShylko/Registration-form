@@ -10,8 +10,8 @@
   <body>
     <main>
       <div class="container">
-        <h1 class="title">Registration</h1>
-        <div class="inputArea">
+        <form id="form" novalidate>
+          <h1 class="title">Registration</h1>
           <div class="area">
             <input id="name" type="text" placeholder="name" />
           </div>
@@ -19,7 +19,10 @@
             <input id="surname" type="text" placeholder="last name" />
           </div>
           <div class="area">
-            <input id="email" type="text" placeholder="email" />
+            <input id="email" type="email" placeholder="email" />
+          </div>
+          <div class="area">
+            <input id="phone" type="tel" placeholder="phone number">
           </div>
           <div class="area">
             <input id="password" type="text" placeholder="password" />
@@ -31,11 +34,13 @@
               placeholder="repeat password"
             />
           </div>
-        </div>
-        <div class="buttons">
+          <div class="area check">
+            <input id="checkbox" type="checkbox">
+            <label id="labelCheckbox" for="checkbox">Accept privacy policy</label>
+          </div>
           <div id="errorMessage"></div>
-          <button class="btn" onclick="check()">Register</button>
-        </div>
+          <button id="btn" type="submit">Register</button>
+        </form>
       </div>
     </main>
     <script src="/js/script.js"></script>

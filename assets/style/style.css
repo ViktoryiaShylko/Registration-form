@@ -35,19 +35,23 @@ input:focus {
   outline: none;
   border: 2px solid #c1d9fd;
 }
+input.error{
+  border:1px solid rgb(255, 152, 152);
+}
+
 .area {
   margin-bottom: 13px;
 }
 .title {
   color: #30507d;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 500;
   line-height: 23px;
   margin-bottom: 38px;
   text-align: center;
 }
 
-.btn {
+#btn {
   border: none;
   font-weight: bold;
   font-size: 14px;
@@ -69,5 +73,21 @@ input:focus {
 #errorMessage {
   text-align: center;
   padding: 10px;
-  color: red;
+  color: rgb(255, 70, 70);
 }
+.check{
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#checkbox {
+  width: 15px;
+  user-select: none;
+}
+
+#checkbox.error + #labelCheckbox {
+  color: rgb(255, 70, 70);
+}
+
+
