@@ -24,7 +24,9 @@ function phoneValidation(phone) {
 }
 
 
-form.onsubmit = function () {
+form.onsubmit = function (event) {
+    event.preventDefault();//отменяет стандартное поведение при отправке формы;
+    
     let emailVal = email.value;
     let phoneVal = phone.value;
     let passwordVal = password.value;
@@ -90,5 +92,27 @@ form.onsubmit = function () {
         checkbox.classList.remove('error');
     }
 
-    
+    let user = {
+        name: document.getElementById("name").value,
+        surname: document.getElementById("surname").value,
+        email: email.Val,
+        phone: phoneVal,
+        password: passwordVal,
+        repeatPassword: passwordRepeatVal,
+    }
+    console.log(user);
+
+    fetch("https://httpbin.org/post", 
+    {
+        method: 'POST',
+        body: JSON.stringify(user),
+        headers: {
+            'Content-Type': 'application/json; charset=utf-8'
+        },
+    })
+    .then(response => response.json())
+    .then(user => {
+        console.log(user);
+    })
+    .catch(error => console.log(error));
 }
